@@ -268,7 +268,7 @@
             this.checkIPTextBox.Location = new System.Drawing.Point(95, 4);
             this.checkIPTextBox.Name = "checkIPTextBox";
             this.checkIPTextBox.Size = new System.Drawing.Size(306, 21);
-            this.checkIPTextBox.TabIndex = 3;
+            this.checkIPTextBox.TabIndex = 1;
             this.checkIPTextBox.TabStop = false;
             this.checkIPTextBox.TextChanged += new System.EventHandler(this.checkIPTextBox_TextChanged);
             this.checkIPTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.checkIPTextBox_Validating);

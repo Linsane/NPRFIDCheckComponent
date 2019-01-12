@@ -17,3 +17,4 @@ C:\Users\LinSeanYu\Desktop\source\repos\WindowsFormsControlLibrary1\WindowsForms
 C:\Users\LinSeanYu\Desktop\source\repos\WindowsFormsControlLibrary1\WindowsFormsControlLibrary1\obj\Debug\NPCustomWinFormControl.csproj.CopyComplete
 C:\Users\LinSeanYu\Desktop\source\repos\WindowsFormsControlLibrary1\WindowsFormsControlLibrary1\obj\Debug\WindowsFormsControlLibrary1.dll
 C:\Users\LinSeanYu\Desktop\source\repos\WindowsFormsControlLibrary1\WindowsFormsControlLibrary1\obj\Debug\WindowsFormsControlLibrary1.pdb
+C:\Users\LinSeanYu\Desktop\source\repos\WindowsFormsControlLibrary1\WindowsFormsControlLibrary1\obj\Debug\NPCustomWinFormControl.csprojAssemblyReference.cache

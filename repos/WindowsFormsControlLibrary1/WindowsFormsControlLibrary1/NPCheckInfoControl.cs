@@ -13,18 +13,21 @@ using System.Text.RegularExpressions;
 namespace NPCustomWinFormControl
 {
     public delegate void DeleteHandler(int index);
+    public delegate bool CheckIPHandler(string ip);
     public partial class NPCheckInfoControl: UserControl
     {
         public NPCheckInfoControl()
         {
             InitializeComponent();
             _initial();
+            this.checkIPTextBox.Focus();
         }
 
         private RadioButton[] checkRadioList;
         private CheckBox[] checkCheckBoxList;
-        private bool hasError;
+        public bool hasError;
         public DeleteHandler deleteHandler;
+        public CheckIPHandler checkIPHandler;
         public int index;
 
         public void setTitle(string title)
@@ -35,6 +38,7 @@ namespace NPCustomWinFormControl
         public void setAddress(string address)
         {
             this.checkIPTextBox.Text = address;
+            
         }
 
         public void setPortNum(int num)
@@ -115,6 +119,9 @@ namespace NPCustomWinFormControl
             {
                 errorProvider1.SetError(textBox, "请输入有效的IP地址");
                 hasError = true;
+            }else if(isIPExist(textBox.Text)){
+                errorProvider1.SetError(textBox, "该读写器地址已存在");
+                hasError = true;
             }
             else
             {
@@ -145,6 +152,16 @@ namespace NPCustomWinFormControl
         private bool isValidateIP(string ip)
         {
             return Regex.IsMatch(ip, @"^((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)$");
+        }
+
+        private bool isIPExist(string ip)
+        {
+            bool exist = false;
+            if (checkIPHandler != null)
+            {
+                exist = checkIPHandler(ip);
+            }
+            return exist;
         }
 
         // 清空端口选择状态
@@ -225,6 +242,11 @@ namespace NPCustomWinFormControl
                 }
             }
             return usedPort;
+        }
+
+        public void _getFocus()
+        {
+            this.checkIPTextBox.Select();
         }
     }
 }
